@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Machine Setup</title>
+</head>
+<body>
+    <h1>Setting Up a Virtual Machine with CentOS 7</h1>
+    
+    <h2>Overview</h2>
+    <p>This guide will walk you through the process of setting up a virtual machine using CentOS 7, VirtualBox, and Vagrant. A virtual machine allows you to create and manage isolated development environments.</p>
+    
+    <h2>Step 1: VirtualBox Installation</h2>
+    <p>VirtualBox is a virtualization platform that allows you to run virtual machines on your computer. Download and install VirtualBox from the official website: <a href="https://www.virtualbox.org/">VirtualBox Download</a>.</p>
+
+    <h2>Step 2: Vagrant Installation and Setup</h2>
+    <p>Vagrant is a tool for managing virtual machine environments. Download and install Vagrant from the official website: <a href="https://www.vagrantup.com/">Vagrant Download</a>. After installation, make sure to add Vagrant to your system's PATH.</p>
+
+    <h2>Step 3: CMder Download and Confirmation</h2>
+    <p>CMder is a console emulator for Windows. Download CMder from the official website: <a href="https://cmder.net/">CMder Download</a>. Once installed, open CMder to confirm that Vagrant is properly installed by running the command <code>vagrant --version</code>.</p>
+
+    <h2>Step 4: Create a Folder for the Virtual Machine</h2>
+    <p>Create a dedicated folder on your computer where you want to store your virtual machine configuration files. This folder will serve as the working directory for your virtual machine setup.</p>
+
+    <h2>Step 5: Navigate to the Folder</h2>
+    <p>Open CMder and navigate to the folder created in Step 4 using the <code>cd</code> command.</p>
+
+    <h2>Step 6: Add CentOS 7 Box</h2>
+    <p>Run the command <code>vagrant box add centos/7</code> and follow the prompts to choose VirtualBox as the provider. This will download the CentOS 7 base box for Vagrant to use.</p>
+
+    <h2>Step 7: Initialize Vagrant</h2>
+    <p>Run the command <code>vagrant init centos/7</code> to create a Vagrantfile in your folder. This file contains configuration settings for your virtual machine.</p>
+
+    <h2>Step 8: Start the Virtual Machine</h2>
+    <p>Run the command <code>vagrant up</code> to start the virtual machine. Vagrant will use the configuration in the Vagrantfile to create and provision the VM.</p>
+
+    <h2>Step 9: Verify in VirtualBox</h2>
+    <p>Open VirtualBox and check for the running CentOS virtual machine. This step confirms that the virtual machine is up and running.</p>
+
+    <h2>Step 10: Login to CentOS</h2>
+    <p>Open a terminal and connect to the CentOS virtual machine using SSH. You'll be prompted for credentials. Use username "root" and the password you set during the Vagrant provisioning process.</p>
+
+</body>
+</html>

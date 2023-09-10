@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Shell (SSH) Setup</title>
+</head>
+<body>
+    <h1>Remote Login Using Secure Shell (SSH)</h1>
+    
+    <h2>Step 1: Login to CentOS</h2>
+    <p>Login to your CentOS machine as the root user with your password.</p>
+    
+    <h2>Step 2: Install SSH</h2>
+    <p>Run the following command to install SSH on your server:</p>
+    <pre><code>sudo yum -y install openssh-server openssh-clients</code></pre>
+    
+    <h2>Step 3: Configure SSH</h2>
+    <p>Open the SSH configuration file:</p>
+    <pre><code>sudo vi /etc/ssh/sshd_config</code></pre>
+    <p>Modify the following lines:</p>
+    <pre><code>
+    Remove "#" from Port 22
+    Remove "#" from PermitRootLogin yes
+    Remove "#" from PasswordAuthentication yes
+    Remove "#" from PubkeyAuthentication yes
+    </code></pre>
+    
+    <h2>Step 4: Restart SSH</h2>
+    <p>Restart the SSH server with the following command:</p>
+    <pre><code>sudo systemctl restart sshd</code></pre>
+    
+    <h2>Step 5: VirtualBox Configuration</h2>
+    <p>Open your VirtualBox and make the changes. Go to network settings and in adapter 1 attach it to 'host only adapter'.</p>
+    
+    <h2>Step 6: Verify CentOS IP</h2>
+    <p>On your CentOS server, open a terminal and run the command:</p>
+    <pre><code>ip a</code></pre>
+    <p>Verify that an IP address is generated.</p>
+    
+    <h2>Step 7: SSH from Windows</h2>
+    <p>Open your Windows Command Prompt and run the following SSH command to connect to your CentOS server:</p>
+    <pre><code>ssh username@yourip</code></pre>
+    <p>Replace "username" with your CentOS username and "yourip" with the CentOS server's IP address. Verify that you can access CentOS using SSH.</p>
+    
+</body>
+</html>

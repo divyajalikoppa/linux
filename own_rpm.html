@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Own RPM Package</title>
+</head>
+<body>
+    <h1>Create Your Own RPM Package</h1>
+
+    <h2>Overview</h2>
+    <p>Creating your own RPM (Red Hat Package Manager) package allows you to bundle and distribute software and files in a format suitable for Red Hat-based Linux distributions. This can be useful for custom software deployment and distribution within your organization.</p>
+
+    <h2>Why Create Your Own RPM</h2>
+    <p>There are several reasons to create your own RPM:</p>
+    <ul>
+        <li><strong>Custom Software:</strong> You have developed custom software that you want to package and distribute.</li>
+        <li><strong>Consistency:</strong> RPM packages ensure consistent installation and removal of software across multiple systems.</li>
+        <li><strong>Dependency Management:</strong> RPM handles package dependencies, ensuring required libraries and components are installed.</li>
+        <li><strong>Version Control:</strong> You can maintain version control of your software using RPM.</li>
+    </ul>
+
+    <h2>Creating Your Own RPM Binary</h2>
+    <ol>
+        <li><strong>Install rpmdevtools and rpmlint:</strong> Rpmdevtools is used for creating, building, and managing RPM packages, while rpmlint checks the quality of RPM packages.</li>
+        <li><strong>Create RPM Directory Structure:</strong> Run <code>rpmdev-setuptree</code> to create the required directory structure.</li>
+        <li><strong>Create a Script File:</strong> Create a script file, e.g., <code>welcome.sh</code>, and add your desired content.</li>
+        <li><strong>Create a Directory:</strong> Make a directory, e.g., <code>welcome-0.0.1</code>.</li>
+        <li><strong>Move Script File:</strong> Move your script file into the created directory.</li>
+        <li><strong>Create Tarball:</strong> Use <code>tar</code> to create a tarball of your directory.</li>
+        <li><strong>Move Tarball:</strong> Move the tarball to <code>rpmbuild/SOURCES</code> directory.</li>
+        <li><strong>Create RPM Spec File:</strong> Create a spec file, e.g., <code>welcome.spec</code>, using <code>rpm-newspec</code>.</li>
+        <li><strong>Edit Spec File:</strong> Open the spec file and add the necessary packaging details.</li>
+        <li><strong>Check for Errors:</strong> Run <code>rpmlint</code> to check for errors in the spec file.</li>
+        <li><strong>Build Source RPM:</strong> Build the source RPM using <code>rpmbuild -bs welcome.spec</code>.</li>
+        <li><strong>Build Binary RPM:</strong> Build the binary RPM using <code>rpmbuild -bb welcome.spec</code>.</li>
+        <li><strong>Copy RPM:</strong> Copy the generated RPM package to a suitable location.</li>
+        <li><strong>Install RPM:</strong> Use <code>sudo rpm -ivh</code> to install the RPM package.</li>
+    </ol>
+
+    <h2>Verifying the Installation</h2>
+    <ol>
+        <li><strong>Check Package Information:</strong> To view information about the installed package, use the <code>rpm -q</code> command.</li>
+        <li><strong>Set Permissions:</strong> Adjust permissions as needed for your script or files.</li>
+        <li><strong>Run the Script:</strong> Execute your script, e.g., <code>welcome.sh</code>, to confirm that it functions as expected.</li>
+    </ol>
+
+    <p>Creating your own RPM package allows you to bundle and distribute your software efficiently on Red Hat-based Linux systems.</p>
+    <p>To view my Assaignment on the creating own rpm, you can access the following document:</p>
+    <a href="https://docs.google.com/document/d/1IEMVNGoHoTAsyrQqJ8QgxkF3hRaxQEay/edit?usp=sharing&ouid=104393867264972117585&rtpof=true&sd=true" target="_blank"><h3>creating own rpm assaignment</h3></a>
+</body>
+</html>
